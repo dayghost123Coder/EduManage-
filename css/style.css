@@ -1,0 +1,280 @@
+/* Global typography for EduManage */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+.app{
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  min-height: 100vh;
+  background: #111827;
+  margin: 0;
+  padding: 24px;
+  border-right: 1px solid #1f2937;
+}
+
+.brand-icon{
+  width: 60px;
+  height: 60px;
+  color: white;
+  
+/* Makes the element a CSS Grid container. */
+  display: grid;
+/* Centers grid items horizontally and
+vertically within their grid cells. */
+  place-items: center;
+
+  font-size: 30px;
+  font-weight: bold;
+  background: #3157d5;
+  border-radius: 17px;
+  margin: auto;
+}
+.brand{
+  gap: 12px;
+/*Arranges flex items vertically, from top 
+to bottom. Works when display is flex. */
+  /*flex-direction: column;*/
+  display: flex;
+}
+.brand h1{
+  margin: 0;
+  font-size: 27px;
+  color: #ffffff;
+}
+.brand p{
+  font-size: 15px;
+  color: #cbd5e1;
+/*Makes the element behave like a block 
+element,usually taking the full available width. */
+  display: block;
+/*Allows long words or text to break onto 
+a new line to prevent overflow. */
+  overflow-wrap: anywhere;
+}
+
+.main-area{
+  flex: 1;
+  min-width: 0;
+  background: ghostwhite;
+}
+
+.topbar{
+  gap: 16px;
+  display: flex;
+  padding: 20px 25px;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid blue;
+}
+.page-title h2 {
+    margin: 0;
+    font-size: 28px;
+  }
+  .page-title p{
+    margin: 6px 0 0;
+    font-size: 16px;
+    color: #1c1d1e;
+  }
+.content{
+  padding: 24px;
+}
+.stats-grid{
+  gap: 16px;
+  display: grid;
+/* Creates 4 equal-width grid columns.
+   minmax(0, 1fr) allows each column to
+   shrink to fit its container. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat-card {
+  min-width: 0;
+  padding: 20px;
+  font-size: 15px;
+  background: #ffffff; /* White */
+  border: 1px solid #e5e7eb; /* Light gray */
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Style the statistic icons */
+.stat-icon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #eff6ff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+.stat-icon img{
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.students-icon{
+  background: #0800e6;
+}
+.teachers-icon{
+  background: #00bf00ff;
+}
+.classes-icon{
+  background: #f98600;
+}
+.attendance-icon{
+  background: #ce02ce;
+}
+.stat-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.stat-card h3{
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+.stat-card p{
+  margin: 12px 0 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.user-profile{
+  gap: 12px;
+  display: flex;
+  align-items: center;
+}
+.user-avatar{
+  height: 44px;
+  width: 44px;
+  font-size: 20px;
+  color: white;
+  display: grid;
+  font-weight: bold;
+  border-radius: 50%;
+  place-items: center;
+  background: #3157d5;
+}
+.recent-activity{
+  margin-top: 34px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+.recent-activity h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #111827;
+}
+.activity-item{
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+.activity-item p{
+  margin: 0;
+  font-size: 16px;
+  color: #222325
+}
+/* Remove the separator beneath the final activity */
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+
+/* Tablets and mobile phones */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 90px;
+    padding: 10px 6px;
+    font-size: 12px;
+    flex-shrink: 0;
+    border-right: 1px solid #e5e7ec;
+  }
+  .brand{
+    gap: 6px;
+    text-align: center;
+    flex-direction: column;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 7px;
+  }
+  .topbar{
+    flex-wrap: wrap;
+    padding: 16px;
+    justify-content: space-between;
+  }
+  .page-title h2 {
+    font-size: 16px;
+  }
+  .page-title p{
+    margin: 2px 0 0;
+    font-size: 14px;
+  }
+  .content{
+  padding: 20px;
+ }
+  .stats-grid{
+    display: grid;
+    gap: 10px;  
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stat-card{
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+  .stat-icon{
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  } 
+  
+  .stat-icon img{
+    width: 16px;
+    height: 16px;
+  }
+  .stat-card h3{
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .stat-card p{
+    margin: 8px 0 0;
+    font-size: 20px;
+  }
+  .brand p{
+    display: block;
+    font-size: 14px;
+    }
+  .brand h1{
+    font-size: 14px;
+  }
+  .recent-activity{
+    margin-top: 23px;
+  }
+  .recent-activity h2 {
+    margin: 0;
+    font-size: 16px;
+  }
+  .activity-item{
+    padding: 9px 0;
+  }
+.activity-item p{
+    font-size: 12px;
+  }
+}
