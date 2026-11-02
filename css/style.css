@@ -66,6 +66,7 @@ a new line to prevent overflow. */
   background: ghostwhite;
 }
 
+/* Arranging each item on the topbar */
 .topbar{
   gap: 16px;
   display: flex;
@@ -79,6 +80,7 @@ a new line to prevent overflow. */
     margin: 0;
     font-size: 28px;
   }
+/* Page title discription */
   .page-title p{
     margin: 6px 0 0;
     font-size: 16px;
@@ -107,13 +109,12 @@ a new line to prevent overflow. */
   margin: 0;
   font-size: 15px;
   font-weight: 600;
-  color: #050376
+  color: #0a0960
 }
 
 /* Style the administrator's role */
 .user-profile p {
   margin:5px 0 0;
-  gap: 10px;
   font-size: 13px;
   color: #6f6969
 }
@@ -194,20 +195,56 @@ a new line to prevent overflow. */
   font-size: 24px;
   color: #111827;
 }
-.activity-item{
+/* Arrange each activity icon and its details horizontally */
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 14px 0;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #b6b6b6; /* Light gray */
 }
-.activity-item p{
+
+/* Style the activity icon container */
+.activity-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #92c0fc; 
+  border-radius: 10px;
+}
+
+/* Set the size of the activity icon image */
+.activity-icon img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Style the activity details */
+.activity-details {
+  min-width: 0;
+}
+
+/* Style the activity description */
+.activity-item p {
   margin: 0;
-  font-size: 16px;
-  color: #222325
+  font-size: 14px;
+  color: #222325; 
 }
+
+/* Style the activity timestamp */
+.activity-time {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
 /* Remove the separator beneath the final activity */
 .activity-item:last-child {
   border-bottom: none;
 }
-
 .sidebar-nav{
   gap: 8px;
   margin-top: 40px;
@@ -324,7 +361,7 @@ a new line to prevent overflow. */
     padding: 9px 0;
   }
 .activity-item p{
-    font-size: 12px;
+    font-size: 14px;
   }
   .sidebar-nav{
     margin-top: 25px;
@@ -332,7 +369,6 @@ a new line to prevent overflow. */
   }
   .nav-link {
     display: flex;
-    /*flex-direction: column;*/
     gap: 5px;
     padding: 10px 4px;
     font-size: 10px;
