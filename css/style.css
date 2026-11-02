@@ -84,6 +84,39 @@ a new line to prevent overflow. */
     font-size: 16px;
     color: #1c1d1e;
   }
+.user-profile{
+  gap: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar{
+  height: 44px;
+  width: 44px;
+  font-size: 20px;
+  color: white;
+  display: grid;
+  font-weight: bold;
+  border-radius: 50%;
+  place-items: center;
+  background: #3157d5;
+}
+
+/* Style the administrator's name */
+.user-profile h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #050376
+}
+
+/* Style the administrator's role */
+.user-profile p {
+  margin:5px 0 0;
+  gap: 10px;
+  font-size: 13px;
+  color: #6f6969
+}
 .content{
   padding: 24px;
 }
@@ -149,22 +182,6 @@ a new line to prevent overflow. */
   color: black;
 }
 
-.user-profile{
-  gap: 12px;
-  display: flex;
-  align-items: center;
-}
-.user-avatar{
-  height: 44px;
-  width: 44px;
-  font-size: 20px;
-  color: white;
-  display: grid;
-  font-weight: bold;
-  border-radius: 50%;
-  place-items: center;
-  background: #3157d5;
-}
 .recent-activity{
   margin-top: 34px;
   padding: 20px;
@@ -255,6 +272,7 @@ a new line to prevent overflow. */
     margin: 2px 0 0;
     font-size: 14px;
   }
+  
   .content{
   padding: 20px;
  }
