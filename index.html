@@ -13,8 +13,13 @@
   
 <body>
   <div class="app">
+    <div class="sidebar-overlay"></div>
   
     <aside class="sidebar">
+       <button class="sidebar-close" aria-label="Close navigation">
+         <img src="assets/icons/close.svg" alt="">
+      </button>
+      
       <div class="brand">
         <div class="brand-icon">E</div>
         <div>
@@ -66,11 +71,16 @@
           <img src="assets/icons/settings.svg" alt="">
           <span>Settings</span>
         </a>
-      </nav>
+      </nav>  
     </aside>
   
-    <div class="main-area">
+    <div class="main-area"> 
       <header class="topbar">
+        <button class="menu-toggle" 
+          aria-label="Open navigation">
+          <img src="assets/icons/menu.svg" alt="" class="menu-icon">
+        </button>
+        
         <div class="page-title">
           <h2>Dashboard Overview</h2>
           <p>Welcome back! Here's your school overview</p>

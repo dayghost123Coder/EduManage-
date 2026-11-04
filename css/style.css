@@ -20,6 +20,9 @@ body {
   border-right: 1px solid #1f2937;
 }
 
+.sidebar-close {
+  display: none;
+}
 .brand-icon{
   width: 60px;
   height: 60px;
@@ -63,28 +66,52 @@ a new line to prevent overflow. */
 .main-area{
   flex: 1;
   min-width: 0;
-  background: #f2f2f2;
+  background: #eceaea;
 }
 
 /* Arranging each item on the topbar */
 .topbar{
+  margin: 0;
   gap: 16px;
   display: flex;
   padding: 20px 25px;
-  background: white;
+  background: #d8e1fe;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  border-radius: 15px;
   justify-content: space-between;
-  border-bottom: 2px solid blue;
+  border-bottom: 3px solid blue;
+  box-shadow: 0 2px 6px #1b4dff;
 }
+
+.menu-toggle {
+  display: none;
+  border: 1px solid #aec2ff;
+  border-radius: 20%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+}
+
+.menu-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
 .page-title h2 {
     margin: 0;
     font-size: 28px;
+  text-align: center;
   }
 /* Page title discription */
   .page-title p{
     margin: 6px 0 0;
     font-size: 16px;
     color: #1c1d1e;
+    text-align: center;
   }
 .user-profile{
   gap: 12px;
@@ -204,9 +231,6 @@ a new line to prevent overflow. */
   background: #92c0fc; 
   border-radius: 50%;
 }
-/*.students-activity-icon{
-  background: red
-}*/
 
 /* Set the size of the activity icon image */
 .activity-icon img {
@@ -301,7 +325,7 @@ a new line to prevent overflow. */
 .action-card:hover{
   border-color: #27047d;
   transform: translateY(-4px);
-  box-shadow: 0 6px 8px #3224f2;
+  box-shadow: 0 4px 6px #3224f2;
 }
 /* Style action-icon */
 .action-icon{
@@ -352,15 +376,63 @@ a new line to prevent overflow. */
 }
 
 
+
 /* Tablets and mobile phones */
 @media (max-width: 768px) {
   .sidebar {
-    width: 90px;
-    padding: 10px 6px;
-    font-size: 12px;
-    flex-shrink: 0;
-    border-right: 1px solid #e5e7ec;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 1000;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease; 
   }
+  
+  .sidebar.active{
+   transform: translateX(0);
+  }
+  
+ .sidebar-close {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .sidebar-close img { 
+    width: 20px; 
+    height: 20px; 
+  } 
+  
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+  .sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  }
+  
+  .menu-toggle {
+    display: grid;
+    position: relative;
+    flex-shrink: 0;
+    padding: 6px;
+    cursor: pointer;
+    background: transparent;
+    z-index: 1101;
+  }
+  
   .brand{
     gap: 6px;
     text-align: center;
@@ -377,12 +449,15 @@ a new line to prevent overflow. */
     padding: 16px;
     justify-content: space-between;
   }
+  
   .page-title h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
+    
   .page-title p{
+    font-size: 12px;
+    font-style: italic;
     margin: 2px 0 0;
-    font-size: 14px;
   }
   
   .content{
